@@ -1,4 +1,4 @@
-Heroku buildpack: Node.js with grunt support
+Heroku buildpack: Node.js with grunt and bower support
 ============================================
 
 Supported Grunt versions: 0.3 and 0.4.
@@ -27,6 +27,7 @@ Here's an overview of what this buildpack does:
 - Runs `npm rebuild` if `node_modules` is checked into version control.
 - Always runs `npm install` to ensure [npm script hooks](https://npmjs.org/doc/misc/npm-scripts.html) are executed.
 - Always runs `npm prune` after restoring cached modules to ensure cleanup of unused dependencies.
+- Always runs `bower install`.
 - Runs `grunt` if a Gruntfile (`Gruntfile.js`, `Gruntfile.coffee`or `grunt.js`) is found.
 
 For more technical details, see the [heavily-commented compile script](https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt/blob/master/bin/compile).
